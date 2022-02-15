@@ -1,0 +1,36 @@
+scalar DateTime
+
+type Region {
+    id: String!,
+    description: String!,
+}
+
+type Customer {
+    id: String!,
+    name: String!
+}
+
+type DocumentIncident {
+    id: String!,
+    number: String!,
+    date: DateTime!,
+    createDate: DateTime!,
+    title: String!,
+    message: String,
+    description: String,
+    channel: String,
+    type: String,
+    priority: String,
+    region: Region
+    customer: Customer
+}
+
+type User {
+    name: String!,
+    token: String
+}
+
+type Query {
+    incidents: [DocumentIncident]
+    users: [User]
+}
